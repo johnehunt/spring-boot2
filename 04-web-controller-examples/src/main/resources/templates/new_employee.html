@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Form</title>
+</head>
+<body>
+ <form action="#" th:action="@{/employees/add}" th:object="${employeeForm}"
+  method="post">
+  <table>
+   <tr>
+    <td>Name:</td>
+    <td><input type="text" th:field="*{name}" /></td>
+   </tr>
+   <tr>
+    <td>Age:</td>
+    <td><input type="text" th:field="*{age}" /></td>
+   </tr>
+   <tr>
+    <td><button type="submit">Submit</button></td>
+   </tr>
+  </table>
+ </form>
+</body>
+</html>
