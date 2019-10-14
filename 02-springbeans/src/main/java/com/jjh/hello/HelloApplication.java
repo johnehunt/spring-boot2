@@ -10,8 +10,8 @@ import com.jjh.beans.DataService;
 import com.jjh.beans.PrintService;
 import com.jjh.logging.LoggingService;
 
-@ComponentScan(basePackages = "com.jjh.hello,com.jjh.beans")
 @SpringBootApplication
+@ComponentScan(basePackages = "com.jjh.hello,com.jjh.beans")
 public class HelloApplication {
 	
 
