@@ -10,8 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-//@EntityScan("com.jjh.bookshop.domain")
-//@EnableJpaRepositories("com.jjh.bookshop.data")
 public class App {
 
 	public static void main(String[] args) {

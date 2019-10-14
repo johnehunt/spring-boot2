@@ -40,16 +40,16 @@ public class BookshopController {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
-	public Book addBook(@RequestBody Book book) {
+	public void addBook(@RequestBody Book book) {
 		System.out.println("BookshopController.addBook(" + book + ")");
-		return this.bookshop.addBook(book);
+		this.bookshop.addBook(book);
 	}
 	
 	@PutMapping
 	@ResponseStatus(HttpStatus.OK)
-	public Book updateBook(@RequestBody Book book) {
+	public void updateBook(@RequestBody Book book) {
 		System.out.println("BookshopController.updateBook(" + book + ")");
-		return this.bookshop.updateBook(book);
+		this.bookshop.updateBook(book);
 	}
 	
 	@DeleteMapping("{isbn}")

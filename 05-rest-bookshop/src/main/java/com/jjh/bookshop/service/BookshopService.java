@@ -24,15 +24,14 @@ public class BookshopService {
 		return this.contents;
 	}
 
-	public Book addBook(Book book) {
+	public void addBook(Book book) {
 		System.out.println("BookshopService.addBook(" + book + ")");
 		if (!this.contents.contains(book)) {
 			this.contents.add(book);
 		}
-		return book;
 	}
 
-	public Book updateBook(Book newVersionOfBook) {
+	public void updateBook(Book newVersionOfBook) {
 		System.out.println("BookshopService.updateBook(" + newVersionOfBook + ")");
 		Book originalBook = this.getBook(newVersionOfBook.getISBN());
 		if (originalBook == null)
@@ -40,24 +39,21 @@ public class BookshopService {
 		originalBook.setAuthor(newVersionOfBook.getAuthor());
 		originalBook.setTitle(newVersionOfBook.getTitle());
 		originalBook.setPrice(newVersionOfBook.getPrice());
-		return newVersionOfBook;
 	}
 
-	public void deleteBook(String id) {
-		Book book = this.getBook(id);
-		System.out.println("BookshopService.deleteBook(" + book + ")");
+	public void deleteBook(String isbn) {
+		System.out.println("BookshopService.deleteBook(" + isbn + ")");
+		Book book = this.getBook(isbn);
 		if (book != null)
 			this.contents.remove(book);
 		else
-			throw new BookNotFoundException("Book with isbn: " + id + " not found");
+			throw new BookNotFoundException("Book with isbn: " + isbn + " not found");
 	}
 
 	public Book getBook(String isbn) {
-		System.out.println("BookshopService.getBook(" + isbn + ")");
-		System.out.println(this.contents);
+		System.out.println("BookshopService.getBook(" + isbn + ")");;
 		List<Book> books = this.contents.stream().filter(b -> b.getISBN().equalsIgnoreCase(isbn))
 				.collect(Collectors.toList());
-		System.out.println(books);
 		if (books.size() > 0)
 			return books.get(0);
 		else
