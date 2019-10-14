@@ -6,8 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-@ImportResource({"classpath*:beans.xml"})
 @SpringBootApplication
+@ImportResource({"classpath*:beans.xml"})
 public class HelloApplication3 {
 	
 
