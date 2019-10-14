@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import com.jh.bookshop.domain.Book;
-import com.jh.bookshop.domain.BookNotFoundException;
+import com.jjh.bookshop.domain.Book;
+import com.jjh.bookshop.domain.BookNotFoundException;
 
 @Component
 public class BookshopService {

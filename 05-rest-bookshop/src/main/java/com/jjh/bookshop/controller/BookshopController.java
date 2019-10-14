@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jh.bookshop.domain.Book;
-import com.jh.bookshop.domain.BookNotFoundException;
+import com.jjh.bookshop.domain.Book;
+import com.jjh.bookshop.domain.BookNotFoundException;
 import com.jjh.bookshop.service.BookshopService;
 
 @RestController
