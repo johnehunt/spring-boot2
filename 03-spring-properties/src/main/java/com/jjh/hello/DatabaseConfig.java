@@ -3,6 +3,7 @@ package com.jjh.hello;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -21,12 +22,16 @@ public class DatabaseConfig {
 	public static PropertySourcesPlaceholderConfigurer propertiesResolver() {
 	    return new PropertySourcesPlaceholderConfigurer();
 	}
+	
+	// Can access properties using SpEL - note the $
+	@Value("${jdbc.url}")
+	private String jdbcUrl;
 
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
-		dataSource.setUrl(env.getProperty("jdbc.url"));
+		dataSource.setUrl(this.jdbcUrl);
 		dataSource.setUsername(env.getProperty("jdbc.username"));
 		dataSource.setPassword(env.getProperty("jdbc.password"));
 		return dataSource;
