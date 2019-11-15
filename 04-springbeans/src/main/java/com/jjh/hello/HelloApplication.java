@@ -35,7 +35,7 @@ public class HelloApplication {
 	
 		System.out.println("Main - requesting CalculationService (again)");
 		CalculationService calc2 = ctx.getBean(CalculationService.class);
-		System.out.println("Main - " + calc.calc("+", 8, 6));
+		System.out.println("Main - " + calc2.calc("+", 8, 6));
 		
 		PrintService printer = ctx.getBean(PrintService.class);
 		printer.print("Hello");
