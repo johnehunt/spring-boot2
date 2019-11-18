@@ -18,11 +18,6 @@ public class DatabaseConfig {
 	@Autowired
 	Environment env;
 	
-	@Bean
-	public static PropertySourcesPlaceholderConfigurer propertiesResolver() {
-	    return new PropertySourcesPlaceholderConfigurer();
-	}
-	
 	// Can access properties using SpEL - note the $
 	@Value("${jdbc.url}")
 	private String jdbcUrl;

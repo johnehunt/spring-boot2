@@ -26,11 +26,6 @@ public class DatabaseConfig2 {
 	
 	@Value("${jdbc.password}")
 	private String password;
-	
-	@Bean
-	public static PropertySourcesPlaceholderConfigurer propertiesResolver() {
-	    return new PropertySourcesPlaceholderConfigurer();
-	}
 
 	@Bean
 	public DataSource dataSource() {
