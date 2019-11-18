@@ -3,13 +3,10 @@ package com.jjh.bookshop.main;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.jms.annotation.EnableJms;
-import org.springframework.jms.core.JmsTemplate;
 
 import com.jjh.bookshop.domain.Book;
 
 @SpringBootApplication
-@EnableJms
 public class App {
 	public static void main(String[] args) throws Exception {
 		System.out.println("Starting");
