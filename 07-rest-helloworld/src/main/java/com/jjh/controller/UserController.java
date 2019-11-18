@@ -23,7 +23,7 @@ public class UserController {
 		users.add(user);
 	}
 
-	//@RequestMapping("user/{name}")
+	//@RequestMapping("user/{name}", method = RequestMethod.GET) // default request method
 	@GetMapping("user/{name}")
 	public User getUser(@PathVariable String name) {
 		System.out.println("UserController.getUser(" + name + ")");

@@ -18,7 +18,7 @@ public class ClientApplication implements CommandLineRunner {
 	private String serverBaseUrl;
 	
 	@Autowired
-	private RestTemplate restTemnplate;
+	private RestTemplate restTemplate;
 
 
 	public static void main(String[] args) {
@@ -32,14 +32,14 @@ public class ClientApplication implements CommandLineRunner {
 		System.out.println("List the books");
 		String url = serverBaseUrl + "/list";
 		System.out.println("url: " + url);
-		String result = restTemnplate.getForObject(url, String.class);
+		String result = restTemplate.getForObject(url, String.class);
 		System.out.println("List: " + result);
 
 		System.out.println("-----------------");
 
 		System.out.println("Get a book");
 		url = serverBaseUrl + "/1";
-		result = restTemnplate.getForObject(url, String.class);
+		result = restTemplate.getForObject(url, String.class);
 		System.out.println("book: " + result);
 
 		System.out.println("-----------------");
@@ -47,7 +47,7 @@ public class ClientApplication implements CommandLineRunner {
 		System.out.println("Add a book");
 		url = serverBaseUrl;
 		Book book = new Book("2", "Bill Jones", "EE Java", 12.45);
-		ResponseEntity<String> result1 = restTemnplate.postForEntity(url, book, String.class);
+		ResponseEntity<String> result1 = restTemplate.postForEntity(url, book, String.class);
 		System.out.println("Post Result: " + result1);
 
 		System.out.println("-----------------");
@@ -55,7 +55,7 @@ public class ClientApplication implements CommandLineRunner {
 		System.out.println("List the books");
 		url = serverBaseUrl + "/list";
 		System.out.println("url: " + url);
-		result = restTemnplate.getForObject(url, String.class);
+		result = restTemplate.getForObject(url, String.class);
 		System.out.println("List: " + result);
 
 		System.out.println("-----------------");
@@ -64,28 +64,28 @@ public class ClientApplication implements CommandLineRunner {
 		System.out.println("Update the Book: " + book);
 		book.setPrice(11.55);
 		url = serverBaseUrl;
-		restTemnplate.put(url, book);
+		restTemplate.put(url, book);
 
 		System.out.println("-----------------");
 
 		System.out.println("List the books");
 		url = serverBaseUrl + "/list";
 		System.out.println("url: " + url);
-		result = restTemnplate.getForObject(url, String.class);
+		result = restTemplate.getForObject(url, String.class);
 		System.out.println("List: " + result);
 
 		System.out.println("-----------------");
 
 		System.out.println("Delete the book: " + book);
 		url = serverBaseUrl + "/" + book.getISBN();
-		restTemnplate.delete(url);
+		restTemplate.delete(url);
 
 		System.out.println("-----------------");
 
 		System.out.println("List the books");
 		url = serverBaseUrl + "/list";
 		System.out.println("url: " + url);
-		result = restTemnplate.getForObject(url, String.class);
+		result = restTemplate.getForObject(url, String.class);
 		System.out.println("List: " + result);
 
 		System.out.println("-----------------");
