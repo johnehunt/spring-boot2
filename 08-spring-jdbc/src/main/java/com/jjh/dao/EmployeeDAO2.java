@@ -1,3 +1,4 @@
+// Provides an example of using the NamedParameterJDBC Template
 package com.jjh.dao;
 
 import java.util.HashMap;
