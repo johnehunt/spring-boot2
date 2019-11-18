@@ -1,20 +1,20 @@
 package com.jjh.beans;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.jjh.main.AppConfig;
 
-
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = { AppConfig.class} )
 public class CalculcatorServiceImplTest {
 	
@@ -22,15 +22,22 @@ public class CalculcatorServiceImplTest {
 	
 	@Autowired
 	private CalculatorService calculator;
+	
+    @BeforeAll
+    static void setUpBeforeClass() throws Exception {
+        System.out.println("setUpBeforeClass");
+    }
+    @AfterAll
+    static void tearDownAfterClass() throws Exception {
+        System.out.println("tearDownAfterClass");
+    }
 
-	private static final double DELTA = 1e-15;
-
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		System.out.println("In setup");
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 		System.out.println("In tearDown");
 	}
@@ -39,7 +46,7 @@ public class CalculcatorServiceImplTest {
 	public void add() {
 		calculator.add(1);
 		calculator.add(1);
-		assertEquals("Result fo add into 1 + 1 shoudl be 2", 2, calculator.value(), DELTA);
+		Assertions.assertEquals(2, calculator.value(), "Result fo add into 1 + 1 shoudl be 2");
 	}
 
 	@Test
@@ -47,15 +54,15 @@ public class CalculcatorServiceImplTest {
 		calculator.add(1);
 		calculator.add(1);
 		calculator.clear();
-		assertEquals("Clear shoudl give Zero", 0.0, calculator.value(), DELTA);
+		Assertions.assertEquals(0.0, calculator.value(), "Clear should give Zero");
 	}
 
-	@Ignore("not ready yet")
+	@Disabled("not ready yet")
 	@Test
 	public void subtract() {
 		calculator.add(2);
 		calculator.subtract(5);
-		assertEquals("Testing reuslt of subtraction", 10.0, calculator.value(), DELTA);
+		Assertions.assertEquals(10.0, calculator.value(), "Testing reuslt of subtraction");
 	}
 
 }
