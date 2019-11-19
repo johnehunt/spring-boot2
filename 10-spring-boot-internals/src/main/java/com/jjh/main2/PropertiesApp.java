@@ -7,14 +7,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class CommonSpringBootPropertiesApp {
+public class PropertiesApp {
 
 	
 	public static void main(String [] args) throws IOException {
 		System.out.println("Starting");
-		ConfigurableApplicationContext ctx = SpringApplication.run(CommonSpringBootPropertiesApp.class, args);
+		ConfigurableApplicationContext ctx = SpringApplication.run(PropertiesApp.class, args);
 		MyInfo info = ctx.getBean(MyInfo.class);
 		System.out.println(info.appName);
+		System.out.println(info.getId());
+		System.out.println(info.getConfigLocation());
 		
 		MyAppProperties props = ctx.getBean(MyAppProperties.class);
 		System.out.println(props.getName());

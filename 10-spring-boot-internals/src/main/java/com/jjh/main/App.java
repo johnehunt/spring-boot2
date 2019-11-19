@@ -11,15 +11,16 @@ import org.springframework.core.env.Environment;
 
 @SpringBootApplication
 public class App {
+	
 	public static void main(String[] args) {
-		// Note the change - no SpringAPplication.run()
+		// Note the change - no SpringApplication.run()
 		SpringApplication app = new SpringApplication(App.class);
 		app.setBanner(new MyBanner());
 		app.setLogStartupInfo(false);
 		app.run(args);
 	}
 
-//	// Can also use the Fluent API
+	// Can also use the Fluent API
 //	public static void main(String[] args) {
 //		new SpringApplicationBuilder()
 //		        .bannerMode(Banner.Mode.OFF)
@@ -40,7 +41,7 @@ public class App {
 //
 //	}
 	
-//	// Can activate Profiles
+//	// Can disable web
 //	public static void main(String[] args) {
 //		new SpringApplicationBuilder()
 //		        .sources(App.class)
