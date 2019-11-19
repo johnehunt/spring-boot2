@@ -46,7 +46,7 @@ public class CalculcatorServiceImplTest {
 	public void add() {
 		calculator.add(1);
 		calculator.add(1);
-		Assertions.assertEquals(2, calculator.value(), "Result fo add into 1 + 1 shoudl be 2");
+		Assertions.assertEquals(2, calculator.value(), "Result of add into 1 + 1 should be 2");
 	}
 
 	@Test
@@ -62,7 +62,7 @@ public class CalculcatorServiceImplTest {
 	public void subtract() {
 		calculator.add(2);
 		calculator.subtract(5);
-		Assertions.assertEquals(10.0, calculator.value(), "Testing reuslt of subtraction");
+		Assertions.assertEquals(10.0, calculator.value(), "Testing result of subtraction");
 	}
 
 }
