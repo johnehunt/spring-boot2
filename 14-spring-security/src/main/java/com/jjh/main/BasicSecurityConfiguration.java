@@ -2,7 +2,6 @@ package com.jjh.main;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -41,11 +40,18 @@ public class BasicSecurityConfiguration extends WebSecurityConfigurerAdapter {
     	System.out.println("BasicSecurityConfiguration.configure(http)");
         http
           .csrf().disable()     // Cross-Site Request Forgery protection turned on by default (see also .cors() Cross Origin Requests)
+          .antMatcher("/welcome/**")
           .authorizeRequests()
-          .anyRequest()
-          .authenticated()
           .and()
+          .antMatcher("/admin/**")
+          .authorizeRequests(authorizeRequests ->
+              authorizeRequests.anyRequest().hasRole("ADMIN")
+          )
           .httpBasic();
     }
 }
+
+//           .anyRequest().hasRole("USER")
+// anyRequest()
+
 
