@@ -3,10 +3,7 @@ package com.jjh.hello;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-
-import com.jjh.hello2.HelloApplication2;
 
 @SpringBootApplication
 public class HelloApplication {
