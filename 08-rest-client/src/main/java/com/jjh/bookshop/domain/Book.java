@@ -1,4 +1,4 @@
-package com.jh.bookshop.domain;
+package com.jjh.bookshop.domain;
 
 public class Book {
 	

@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import com.jh.bookshop.domain.Book;
+import com.jjh.bookshop.domain.Book;
 
 @SpringBootApplication
 public class ClientApplication implements CommandLineRunner {
