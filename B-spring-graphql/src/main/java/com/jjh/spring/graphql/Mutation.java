@@ -3,9 +3,9 @@ package com.jjh.spring.graphql;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 
 public class Mutation implements GraphQLMutationResolver {
-	private BookDao bookDao;
+	private BookDAO bookDao;
 
-	public Mutation(BookDao bookDao) {
+	public Mutation(BookDAO bookDao) {
 		this.bookDao = bookDao;
 	}
 

@@ -11,12 +11,10 @@ type Author {
     books: [Book]!
 }
 
-# The Root Query for the application
 type Query {
     books(count: Int): [Book]!
 }
 
-# The Root Mutation for the application
 type Mutation {
     writeBook(isbn: String!, title: String!, category: String, author: String!) : Book!
 }

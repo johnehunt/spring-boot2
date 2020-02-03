@@ -6,32 +6,32 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GraphqlConfiguration {
 	@Bean
-	public BookDao postDao() {
-		return new BookDao();
+	public BookDAO bookDao() {
+		return new BookDAO();
 	}
 
 	@Bean
-	public AuthorDao authorDao() {
-		return new AuthorDao();
+	public AuthorDAO authorDao() {
+		return new AuthorDAO();
 	}
 
 	@Bean
-	public BookResolver postResolver(AuthorDao authorDao) {
-		return new BookResolver(authorDao);
+	public BookQueryResolver bookQueryResolver(AuthorDAO authorDao) {
+		return new BookQueryResolver(authorDao);
 	}
 
 	@Bean
-	public AuthorResolver authorResolver(BookDao postDao) {
-		return new AuthorResolver(postDao);
+	public AuthorQueryResolver authorQueryResolver(BookDAO postDao) {
+		return new AuthorQueryResolver(postDao);
 	}
 
 	@Bean
-	public Query query(BookDao bookDao) {
+	public Query query(BookDAO bookDao) {
 		return new Query(bookDao);
 	}
 
 	@Bean
-	public Mutation mutation(BookDao bookDao) {
+	public Mutation mutation(BookDAO bookDao) {
 		return new Mutation(bookDao);
 	}
 }

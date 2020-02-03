@@ -5,13 +5,14 @@ import java.util.List;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 
 public class Query implements GraphQLQueryResolver {
-	private BookDao bookDao;
+	private BookDAO bookDao;
 
-	public Query(BookDao bookDao) {
+	public Query(BookDAO bookDao) {
 		this.bookDao = bookDao;
 	}
 
 	public List<Book> getBooks(int count) {
+		System.out.println("Query.getBooks(" + count + ")");
 		return bookDao.getBooks(count);
 	}
 }
