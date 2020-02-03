@@ -7,11 +7,11 @@ import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 public class Query implements GraphQLQueryResolver {
 	private BookDao bookDao;
 
-	public Query(BookDao postDao) {
-		this.bookDao = postDao;
+	public Query(BookDao bookDao) {
+		this.bookDao = bookDao;
 	}
 
-	public List<Book> getRecentBooks(int count, int offset) {
-		return bookDao.getRecentBooks(count, offset);
+	public List<Book> getBooks(int count) {
+		return bookDao.getBooks(count);
 	}
 }
