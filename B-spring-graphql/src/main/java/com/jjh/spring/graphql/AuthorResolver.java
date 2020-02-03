@@ -4,10 +4,10 @@ import java.util.List;
 
 import com.coxautodev.graphql.tools.GraphQLResolver;
 
-public class AuthorQueryResolver implements GraphQLResolver<Author> {
+public class AuthorResolver implements GraphQLResolver<Author> {
 	private BookDAO bookDao;
 
-	public AuthorQueryResolver(BookDAO bookDao) {
+	public AuthorResolver(BookDAO bookDao) {
 		this.bookDao = bookDao;
 	}
 

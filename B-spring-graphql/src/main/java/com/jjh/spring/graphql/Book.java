@@ -9,7 +9,6 @@ public class Book {
 	public Book() {}
 
 	public Book(String isbn, String title, String category, String authorId) {
-		super();
 		this.isbn = isbn;
 		this.title = title;
 		this.category = category;

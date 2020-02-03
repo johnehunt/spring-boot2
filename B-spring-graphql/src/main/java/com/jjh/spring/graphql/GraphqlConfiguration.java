@@ -16,13 +16,13 @@ public class GraphqlConfiguration {
 	}
 
 	@Bean
-	public BookQueryResolver bookQueryResolver(AuthorDAO authorDao) {
-		return new BookQueryResolver(authorDao);
+	public BookResolver bookQueryResolver(AuthorDAO authorDao) {
+		return new BookResolver(authorDao);
 	}
 
 	@Bean
-	public AuthorQueryResolver authorQueryResolver(BookDAO postDao) {
-		return new AuthorQueryResolver(postDao);
+	public AuthorResolver authorQueryResolver(BookDAO postDao) {
+		return new AuthorResolver(postDao);
 	}
 
 	@Bean

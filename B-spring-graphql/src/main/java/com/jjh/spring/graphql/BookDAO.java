@@ -24,6 +24,7 @@ public class BookDAO {
 	}
 
 	public void saveBook(Book book) {
+		System.out.println("BookDAO.saveBook(" + book + ")");
 		books.add(book);
 	}
 }

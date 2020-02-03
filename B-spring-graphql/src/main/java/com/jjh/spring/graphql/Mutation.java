@@ -10,6 +10,7 @@ public class Mutation implements GraphQLMutationResolver {
 	}
 
 	public Book writeBook(String isbn, String title, String category, String author) {
+		System.out.println("Mutation.writeBooks(" + isbn + ")");
 		Book book = new Book(isbn, title, category, author);
 		bookDao.saveBook(book);
 		return book;

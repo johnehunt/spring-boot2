@@ -7,7 +7,6 @@ public class Author {
 	public Author() { }
 
 	public Author(String id, String name) {
-		super();
 		this.id = id;
 		this.name = name;
 	}
