@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>com.jjh</groupId>
-	<artifactId>A-spring-websockets</artifactId>
+	<artifactId>spring-websockets</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
