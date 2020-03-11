@@ -16,11 +16,11 @@ import org.springframework.web.client.RestTemplate;
 public class ShopService {
 
 	public static void main(String[] args) {
-		System.out.println("Starting the BookShop Service");
+		System.out.println("Starting the Shop Service");
 		// Will configure using shop-service.yml
 		System.setProperty("spring.config.name", "shop-service");
 		SpringApplication.run(ShopService.class, args);
-		System.out.println("Bookshop Service started");
+		System.out.println("Shop Service started");
 	}
 	
 	@LoadBalanced    // Make sure to create the load-balanced template
