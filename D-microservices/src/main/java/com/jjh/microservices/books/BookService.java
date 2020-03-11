@@ -33,7 +33,7 @@ public class BookService {
 		System.out.println("Starting BookService");
 		
 		// Tell server to look for book-server.properties or
-		// book-server.yaml
+		// book-server.yml
 		System.setProperty("spring.config.name", "book-service");
 
 		SpringApplication.run(BookService.class, args);
