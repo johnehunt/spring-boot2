@@ -8,4 +8,4 @@ eureka:
 
 server:
   port: 1111   # HTTP (Tomcat) port
-
+  
