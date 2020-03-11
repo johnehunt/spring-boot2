@@ -15,5 +15,3 @@ eureka:
       defaultZone: http://localhost:1111/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
-
-management.endpoints.web.exposure.include: '*'
