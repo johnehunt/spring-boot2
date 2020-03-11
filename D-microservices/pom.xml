@@ -82,6 +82,12 @@
 
 
 	<build>
+		<resources>
+			<resource>
+				<!-- Make sure resources is on the classpath -->
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
