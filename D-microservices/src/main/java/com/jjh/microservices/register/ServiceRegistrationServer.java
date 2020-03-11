@@ -1,4 +1,4 @@
-package com.jjh.microservices;
+package com.jjh.microservices.register;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.trace.http.HttpTraceRepository;
