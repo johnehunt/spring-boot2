@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.jjh</groupId>
-	<artifactId>bookshop</artifactId>
+	<artifactId>c-spring-docker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>test</name>
 	<description>Demo Rest project for Spring Boot</description>
