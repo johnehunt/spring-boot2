@@ -1,6 +1,6 @@
 package com.jjh.spring.graphql;
 
-import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import graphql.kickstart.tools.GraphQLMutationResolver;
 
 public class Mutation implements GraphQLMutationResolver {
 	private BookDAO bookDao;

@@ -2,7 +2,7 @@ package com.jjh.spring.graphql;
 
 import java.util.List;
 
-import com.coxautodev.graphql.tools.GraphQLResolver;
+import graphql.kickstart.tools.GraphQLResolver;
 
 public class AuthorResolver implements GraphQLResolver<Author> {
 	private BookDAO bookDao;

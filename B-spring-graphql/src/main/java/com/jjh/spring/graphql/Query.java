@@ -1,7 +1,8 @@
 package com.jjh.spring.graphql;
 
 import java.util.List;
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+
+import graphql.kickstart.tools.GraphQLQueryResolver;
 
 public class Query implements GraphQLQueryResolver {
 	private BookDAO bookDao;

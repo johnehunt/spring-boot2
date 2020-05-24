@@ -13,4 +13,5 @@ public class BookshopGQLApp extends SpringBootServletInitializer {
 		System.out.println("Setup finished");
 	}
 
+
 }
