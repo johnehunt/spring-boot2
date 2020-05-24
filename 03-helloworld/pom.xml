@@ -10,9 +10,9 @@
 	</parent>
 	
 	<groupId>com.jjh</groupId>
-	<artifactId>hello</artifactId>
+	<artifactId>03-helloworld</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>helloworld</name>
+	<name>03-helloworld</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
