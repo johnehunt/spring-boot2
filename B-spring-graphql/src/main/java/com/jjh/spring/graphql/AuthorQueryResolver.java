@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 import graphql.kickstart.tools.GraphQLResolver;
 
 @Component
-public class AuthorResolver implements GraphQLResolver<Author> {
+public class AuthorQueryResolver implements GraphQLResolver<Author> {
 	private Bookshop bookDao;
 
 	@Autowired
-	public AuthorResolver(Bookshop bookDao) {
+	public AuthorQueryResolver(Bookshop bookDao) {
 		this.bookDao = bookDao;
 	}
 
