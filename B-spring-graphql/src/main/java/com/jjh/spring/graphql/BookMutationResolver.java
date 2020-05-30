@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 
 @Component
-public class Mutation implements GraphQLMutationResolver {
+public class BookMutationResolver implements GraphQLMutationResolver {
 	
-	private BookDAO bookDao;
+	private Bookshop bookDao;
 
 	@Autowired
-	public Mutation(BookDAO bookDao) {
+	public BookMutationResolver(Bookshop bookDao) {
 		this.bookDao = bookDao;
 	}
 

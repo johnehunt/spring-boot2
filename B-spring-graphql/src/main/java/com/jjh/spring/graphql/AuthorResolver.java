@@ -9,10 +9,10 @@ import graphql.kickstart.tools.GraphQLResolver;
 
 @Component
 public class AuthorResolver implements GraphQLResolver<Author> {
-	private BookDAO bookDao;
+	private Bookshop bookDao;
 
 	@Autowired
-	public AuthorResolver(BookDAO bookDao) {
+	public AuthorResolver(Bookshop bookDao) {
 		this.bookDao = bookDao;
 	}
 

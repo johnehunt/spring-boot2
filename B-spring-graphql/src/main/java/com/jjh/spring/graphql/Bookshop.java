@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BookDAO {
+public class Bookshop {
 	private List<Book> books = new ArrayList<>();
 
-	public BookDAO() {
+	public Bookshop() {
 		books.add(new Book("121", "Java", "Technical", "1"));
 		books.add(new Book("345", "Death in the Spring", "Detective", "2"));
 		books.add(new Book("987", "Henry VI", "Historical", "3"));
