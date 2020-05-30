@@ -1,10 +1,16 @@
 package com.jjh.spring.graphql;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import graphql.kickstart.tools.GraphQLMutationResolver;
 
+@Component
 public class Mutation implements GraphQLMutationResolver {
+	
 	private BookDAO bookDao;
 
+	@Autowired
 	public Mutation(BookDAO bookDao) {
 		this.bookDao = bookDao;
 	}

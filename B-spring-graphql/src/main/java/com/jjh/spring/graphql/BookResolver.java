@@ -2,8 +2,11 @@ package com.jjh.spring.graphql;
 
 import java.util.Optional;
 
+import org.springframework.stereotype.Component;
+
 import graphql.kickstart.tools.GraphQLResolver;
 
+@Component
 public class BookResolver implements GraphQLResolver<Book> {
 	private AuthorDAO authorDao;
 
