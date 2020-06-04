@@ -22,7 +22,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-
 	public List<Employee> getEmployees() {
 		List<Employee> employees = new ArrayList<Employee>();
 		String sql = "SELECT * FROM employee";
