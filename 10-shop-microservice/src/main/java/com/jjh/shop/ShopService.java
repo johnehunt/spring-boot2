@@ -1,4 +1,4 @@
-package java.com.jjh.shop;
+package com.jjh.shop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

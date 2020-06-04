@@ -1,8 +1,4 @@
-package java.com.jjh.books;
-
-import com.jjh.books.Author;
-import com.jjh.books.Product;
-import com.jjh.books.Publisher;
+package com.jjh.books;
 
 public class Book extends Product {
 	

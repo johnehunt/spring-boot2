@@ -20,7 +20,7 @@ public class CalculationServiceImpl implements CalculationService {
 			result = x + y;
 			break;
 		case "-":
-			result = x + y;
+			result = x - y;
 			break;
 		}
 		return prefix + result;

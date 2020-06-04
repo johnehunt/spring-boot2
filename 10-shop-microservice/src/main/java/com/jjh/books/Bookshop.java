@@ -1,7 +1,4 @@
-package java.com.jjh.books;
-
-import com.jjh.books.BookException;
-import com.jjh.books.Publisher;
+package com.jjh.books;
 
 import java.util.ArrayList;
 import java.util.List;

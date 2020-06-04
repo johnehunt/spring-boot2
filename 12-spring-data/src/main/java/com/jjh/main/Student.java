@@ -17,7 +17,6 @@ public class Student {
 	private String surname;
 	private String subject;
 	private String email;
-	private int year;
 	
 	public Student() { } // Required by JPA
 	
@@ -26,8 +25,6 @@ public class Student {
 		this.name = name;
 		this.surname = surname;
 		this.subject = subject;
-		this.email = email;
-		this.year = 1;
 	}
 
 	public String getName() {

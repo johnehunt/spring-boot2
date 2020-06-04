@@ -18,7 +18,7 @@ public class HelloApplication {
 		ApplicationContext ctx = SpringApplication.run(HelloApplication.class, args);
 
 		System.out.println("Main - requesting MessageService");
-		WelcomeService service = (WelcomeService) ctx.getBean(WelcomeService.class);
+		WelcomeService service = ctx.getBean(WelcomeService.class);
 
 		String result = service.getWelcomeInfo("John", new Date());
 		System.out.println("Result: " + result);

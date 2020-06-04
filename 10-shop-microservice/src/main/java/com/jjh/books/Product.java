@@ -1,6 +1,4 @@
-package java.com.jjh.books;
-
-import com.jjh.books.BookException;
+package com.jjh.books;
 
 public abstract class Product implements Sales {
 

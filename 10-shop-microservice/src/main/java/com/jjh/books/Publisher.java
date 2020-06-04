@@ -1,6 +1,4 @@
-package java.com.jjh.books;
-
-import com.jjh.books.PrettyPrinter;
+package com.jjh.books;
 
 public class Publisher implements PrettyPrinter {
 	

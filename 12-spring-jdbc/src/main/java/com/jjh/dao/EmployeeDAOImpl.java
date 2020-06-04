@@ -59,7 +59,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		return employees;
 	}
 
-	class EmployeeMapper implements RowMapper<Employee> {
+	static class EmployeeMapper implements RowMapper<Employee> {
 
 		public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Employee emp = new EmployeeImpl();

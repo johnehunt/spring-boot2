@@ -1,7 +1,4 @@
-package java.com.jjh.books;
-
-import com.jjh.books.Address;
-import com.jjh.books.PrettyPrinter;
+package com.jjh.books;
 
 public class Author implements PrettyPrinter {
 	

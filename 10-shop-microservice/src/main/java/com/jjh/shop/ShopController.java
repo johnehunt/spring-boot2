@@ -1,4 +1,4 @@
-package java.com.jjh.shop;
+package com.jjh.shop;
 
 import com.jjh.books.Book;
 import org.springframework.beans.factory.annotation.Autowired;
