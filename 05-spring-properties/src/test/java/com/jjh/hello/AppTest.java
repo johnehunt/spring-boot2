@@ -1,4 +1,4 @@
-package com.jjh.hello;
+package com.jjh.message;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

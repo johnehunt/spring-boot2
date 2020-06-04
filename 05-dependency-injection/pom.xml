@@ -10,7 +10,7 @@
 	</parent>
 
 	<groupId>com.jjh</groupId>
-	<artifactId>05-dependencyinjection</artifactId>
+	<artifactId>05-dependency-injection</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
