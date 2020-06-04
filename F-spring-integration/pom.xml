@@ -10,12 +10,12 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.jjh</groupId>
-	<artifactId>12-spring-integration</artifactId>
+	<artifactId>F-spring-integration</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>13</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
