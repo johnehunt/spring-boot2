@@ -1,22 +1,21 @@
 package com.jjh.spring.graphql;
 
-import java.util.Optional;
-
+import graphql.kickstart.tools.GraphQLResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import graphql.kickstart.tools.GraphQLResolver;
+import java.util.Optional;
 
 @Component
 public class AuthorForBookResolver implements GraphQLResolver<Book> {
-	private AuthorDAO authorDao;
+	private com.jjh.graphql.AuthorDAO authorDao;
 
 	@Autowired
-	public AuthorForBookResolver(AuthorDAO authorDao) {
+	public AuthorForBookResolver(com.jjh.graphql.AuthorDAO authorDao) {
 		this.authorDao = authorDao;
 	}
 
-	public Optional<Author> getAuthor(Book book) {
+	public Optional<com.jjh.graphql.Author> getAuthor(Book book) {
 		System.out.println("BookQueryResolver.getAuthor(" + book + ")");
 		return authorDao.getAuthor(book.getAuthorId());
 	}
