@@ -12,14 +12,12 @@ import com.jjh.bookshop.domain.Book;
 
 @SpringBootApplication
 public class ClientApplication implements CommandLineRunner {
-	
-	
+
 	@Value("${server.url}")
 	private String serverBaseUrl;
 	
 	@Autowired
 	private RestTemplate restTemplate;
-
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClientApplication.class, args);
