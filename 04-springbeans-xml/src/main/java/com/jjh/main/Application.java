@@ -10,12 +10,11 @@ import com.jjh.beans.MessageService;
 
 @ImportResource({"classpath*:applicationContext.xml"})
 @SpringBootApplication
-public class HelloApplication {
-	
+public class Application {
 
 	public static void main(String[] args) {
 		System.out.println("Main - obtaining Application Context");
-		ApplicationContext context = SpringApplication.run(HelloApplication.class, args);
+		ApplicationContext context = SpringApplication.run(Application.class, args);
 		
 		System.out.println("Main - requesting CalculcationService");
 		CalculationService calc = context.getBean("CalculationService", CalculationService.class);

@@ -1,4 +1,4 @@
-package com.jjh.hello;
+package com.jjh.message;
 
 public interface MessageService {
    String getMessage();

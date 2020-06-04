@@ -12,12 +12,12 @@ import com.jjh.beans.MessageService;
 @ImportResource({"classpath*:beans.xml"})
 @ComponentScan(basePackages = "com.jjh.beans")
 @SpringBootApplication
-public class HelloApplication {
+public class Application {
 	
 
 	public static void main(String[] args) {
 		System.out.println("Main - obtaining Application Context");
-		ApplicationContext ctx = SpringApplication.run(HelloApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 		
 		System.out.println("Main - requesting CalculcationService");
 		CalculationService calc = ctx.getBean("CalculationService", CalculationService.class);
