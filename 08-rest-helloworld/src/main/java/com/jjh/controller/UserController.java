@@ -23,6 +23,8 @@ public class UserController {
 		users.add(user);
 	}
 
+	// http://localhost:8080/users/user/john
+
 	//@RequestMapping("user/{name}", method = RequestMethod.GET) // default request method
 	@GetMapping("user/{name}")
 	public User getUser(@PathVariable String name) {
@@ -30,6 +32,8 @@ public class UserController {
 		User user = new User(name, 54);
 		return user;
 	}
+
+	// http://localhost:8080/users/list
 
 	@GetMapping("list")
 	public List<User> getUsers() {

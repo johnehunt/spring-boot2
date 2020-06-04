@@ -5,7 +5,8 @@ public class User {
 	private int age;
 	private String title = "Mr";
 	
-	public User() {}
+	public User() {} // Need for JAXB
+
 	public User(String name, int age) {
 		this.name = name;
 		this.age = age;
