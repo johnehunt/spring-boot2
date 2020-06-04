@@ -1,10 +1,11 @@
 # Spring properties
 spring:
   application:
-     name: book-service
+     name: shop-service
 
 # HTTP Server
-server.port: 2222   # HTTP (Tomcat) port
+server:
+  port: 3333   # HTTP (Tomcat) port
 
 # Discovery Server Access
 #  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
