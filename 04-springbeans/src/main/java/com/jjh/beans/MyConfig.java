@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Scope;
 
 import com.jjh.logging.LoggingService;
 
-
 @Configuration
 public class MyConfig {
 	
@@ -21,6 +20,5 @@ public class MyConfig {
 	public DataService dataService() {
 		return new DataServiceImpl();
 	}
-	
 
 }
