@@ -1,5 +1,0 @@
-CREATE SCHEMA `bookshop` ;
-
-CREATE USER 'user'@'localhost' IDENTIFIED by 'user123';
-GRANT ALL on books.* TO 'user'@'localhost';
-
