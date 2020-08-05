@@ -8,22 +8,25 @@ import java.util.List;
 
 public class App {
 	public static void main(String[] args) {
-		System.out.println("Starting");
 
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("StudentJPA");
+		System.out.println("Setting up EntityManager");
+		EntityManagerFactory emf =
+				Persistence.createEntityManagerFactory("StudentJPA");
 		EntityManager em = emf.createEntityManager();
-		System.out.println(em);
+		System.out.println("Entity Manager: " + em);
 
 //		Module m = new Module(1, "OOP");
 //		em.getTransaction().begin();
 //		em.persist(m);
 //		em.getTransaction().commit();
-		
+
+		System.out.println("-----------");
 		System.out.println("Find a student by ID");
 		Student student = em.find(Student.class, 1);
 		System.out.println(student);
 
-		// Create a new Student
+		System.out.println("-----------");
+		System.out.println("Create a new Student");
 		Student s1 = new Student(7,
 				"Bill",
 				"John",
@@ -34,7 +37,7 @@ public class App {
         em.getTransaction().commit();
 		System.out.println("Stored student: " + s1);
 
-		System.out.println("--------");
+		System.out.println("-----------");
 
         // Retrieve all students
 
@@ -46,7 +49,7 @@ public class App {
 			System.out.println(s);
 		}
 
-		System.out.println("--------");
+		System.out.println("-----------");
 
 		// Retrieve all students doing games
 		System.out.println("Final All students where subject is games");
@@ -59,7 +62,7 @@ public class App {
 
 		// Update the object we created from the database
 
-		System.out.println("Update students name");
+		System.out.println("Update students' name");
 		Student s2 = em.find(Student.class, 7);
 		s2.setName("William");
 		em.getTransaction().begin();
