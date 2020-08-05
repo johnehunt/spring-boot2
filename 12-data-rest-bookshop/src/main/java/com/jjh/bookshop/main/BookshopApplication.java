@@ -14,6 +14,9 @@ public class BookshopApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookshopApplication.class, args);
+		System.out.println("Server running: " +
+				"\n\thttp://localhost:8080/bookshop/list" +
+				"\n\thttp://localhost:8080/bookshop/1");
 	}
 
 }
