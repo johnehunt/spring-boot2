@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookshop
+    password: user123
+    username: user
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: features
+      shutdown: true
+  info:
+     app:
+        name: Spring Sample Application
+        description: This is my first spring boot application
+        version: 1.0.0
+      

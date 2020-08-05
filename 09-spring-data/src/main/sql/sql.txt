@@ -1,0 +1,5 @@
+CREATE SCHEMA `uni-database` ;
+
+CREATE USER 'user'@'localhost' IDENTIFIED by 'user123';
+GRANT ALL on books.* TO 'user'@'localhost';
+
