@@ -1,4 +1,5 @@
-// Provides an example of using the NamedParameterJDBC Template
+// Provides an example of using the SimpleJDBCInsert template
+// and the NamedParameterJDBC Template
 package com.jjh.dao;
 
 import java.util.HashMap;

@@ -31,9 +31,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			Map<String, Object> map = it.next();
 			String name = (String) map.get("name");
 			Long employeeId = (Long) map.get("id");
-			Employee book = new EmployeeImpl();
-			book.setName(name);
-			book.setId(employeeId + "");
+			Employee book = new EmployeeImpl(employeeId + "", name);
 			employees.add(book);
 		}
 		return employees;
