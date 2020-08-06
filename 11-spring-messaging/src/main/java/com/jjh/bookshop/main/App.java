@@ -15,7 +15,7 @@ public class App {
 		Sender sender = context.getBean(Sender.class);
 
 		// Publish a book
-		System.out.println("Sending an book message.");
+		System.out.println("Sending a book message.");
 
 		Book book = new Book("1", "Java Forever", "Jasmine Smith", 12.55);
 

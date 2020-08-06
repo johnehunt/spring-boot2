@@ -7,12 +7,13 @@ import com.jjh.bookshop.domain.Book;
 
 public class Sender {
 
-	@Autowired
-	private JmsTemplate jmsTemplate;
+    @Autowired
+    private JmsTemplate jmsTemplate;
+    private static final String destinationName = "BookQueue";
 
-	public void send(Book message) {
-		System.out.println("sending message: " + message);
-		jmsTemplate.convertAndSend("BookQueue", message);
-	}
+    public void send(Book book) {
+        System.out.println("sending message: " + book);
+        jmsTemplate.convertAndSend(destinationName, book);
+    }
 
 }
