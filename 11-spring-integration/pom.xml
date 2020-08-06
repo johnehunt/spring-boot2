@@ -11,10 +11,10 @@
 	</parent>
 
 	<groupId>com.jjh</groupId>
-	<artifactId>F-spring-integration</artifactId>
+	<artifactId>11-spring-integration</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>F-spring-integration</name>
+	<name>11-spring-integration</name>
 	<description>Demo project for Spring Boot Integration</description>
 
 	<properties>
