@@ -54,7 +54,7 @@ public class BookshopController {
 	
 	@DeleteMapping("{isbn}")
 	@ResponseStatus(HttpStatus.OK)
-	public void deleteBook(@PathVariable String isbn) {
+	public void deleteBook(@PathVariable(required = true) String isbn) {
 		System.out.println("BookshopController.deleteBook(" + isbn + ")");
 		bookshop.deleteBook(isbn);
 	}
