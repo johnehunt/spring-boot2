@@ -11,6 +11,7 @@ public class Application {
     	System.out.println("Starting the web application");
         SpringApplication.run(Application.class, args);
         System.out.println("Startup complete");
-        System.out.println("http://localhost:8080/users/list");
+        System.out.println("\thttp://localhost:8080/users/list");
+        System.out.println("\thttp://localhost:8080/users/user/john");
     }
 }
