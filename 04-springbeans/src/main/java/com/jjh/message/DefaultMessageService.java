@@ -12,7 +12,7 @@ public class DefaultMessageService implements MessageService {
 	}
 	
 	public DefaultMessageService(String msg) {
-		System.out.println("DefaultMessageService.<cons>(" + msg + ")");
+		System.out.println("DefaultMessageService.<init>(" + msg + ")");
 		message = msg;
 	}
 

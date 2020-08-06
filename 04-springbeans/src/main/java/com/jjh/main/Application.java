@@ -1,5 +1,6 @@
 package com.jjh.main;
 
+import com.jjh.beans.ExpensiveService;
 import com.jjh.message.MessageService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,6 +36,9 @@ public class Application {
         System.out.println("Main - requesting CalculationService (again)");
         CalculationService calc2 = ctx.getBean(CalculationService.class);
         System.out.println("Main - " + calc2.calc("+", 8, 6));
+
+        System.out.println("Main - requesting ExpensiveService");
+        ExpensiveService es = ctx.getBean(ExpensiveService.class);
 
         PrintService printer = ctx.getBean(PrintService.class);
         printer.print("Hello");
