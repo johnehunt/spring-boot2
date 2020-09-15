@@ -2,7 +2,6 @@ package com.jjh.main;
 
 import java.util.Date;
 
-import com.jjh.primary.FoodService;
 import com.jjh.primary.House;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,11 +12,11 @@ import com.jjh.beans.WelcomeService;
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.jjh.beans,com.jjh.primary")
-public class MainApplication {
+public class Application {
 
 	public static void main(String[] args) {
 		System.out.println("Main - obtaining Application Context");
-		ApplicationContext ctx = SpringApplication.run(MainApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 
 		System.out.println("Main - requesting MessageService");
 		WelcomeService service = ctx.getBean(WelcomeService.class);
