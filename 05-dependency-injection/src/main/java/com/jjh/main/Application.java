@@ -3,6 +3,7 @@ package com.jjh.main;
 import java.util.Date;
 
 import com.jjh.primary.House;
+import com.jjh.writing.Company;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -11,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.jjh.beans.WelcomeService;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.jjh.beans,com.jjh.primary")
+@ComponentScan(basePackages = "com.jjh.beans,com.jjh.primary,com.jjh.writing")
 public class Application {
 
 	public static void main(String[] args) {
@@ -26,6 +27,11 @@ public class Application {
 
 		House house = ctx.getBean(House.class);
 		house.supplyFood();
+
+		System.out.println("---------------");
+
+		Company company = ctx.getBean(Company.class);
+		company.printAuthors();
 
 	}
 

@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>com.example</groupId>
-	<artifactId>16-spring-security</artifactId>
+	<artifactId>13-spring-security</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 

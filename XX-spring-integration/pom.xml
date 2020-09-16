@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>com.jjh</groupId>
-	<artifactId>11-spring-integration</artifactId>
+	<artifactId>XX-spring-integration</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>11-spring-integration</name>

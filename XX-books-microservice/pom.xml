@@ -12,7 +12,7 @@
     </parent>
 
     <groupId>com.jjh</groupId>
-    <artifactId>10-books-microservice</artifactId>
+    <artifactId>XX-books-microservice</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

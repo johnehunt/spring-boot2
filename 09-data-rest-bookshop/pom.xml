@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>com.midmarsh</groupId>
-	<artifactId>12-data-rest-bookshop</artifactId>
+	<artifactId>09-data-rest-bookshop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bookshop</name>
 	<description>Demo project for Spring Boot</description>
