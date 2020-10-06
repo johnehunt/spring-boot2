@@ -10,13 +10,19 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //@SpringBootApplication(exclude = {SecurityAutoConfiguration.class, ManagementWebSecurityAutoConfiguration.class})
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.jjh.bookshop.controller,com.jjh.bookshop.service")
-@EntityScan("com.jjh.bookshop.domain")
-@EnableJpaRepositories("com.jjh.bookshop.repository")
 public class BookshopApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookshopApplication.class, args);
+		System.out.println("Url to try with Actuator:");
+		System.out.println("\t - http://localhost:8080/actuator/health");
+		System.out.println("You will need to login for:");
+		System.out.println("\t - http://localhost:8080/actuator");
+
 	}
 
 }
+
+/**
+ * Can shut down using curl -X POST localhost:port/actuator/shutdown
+ */
