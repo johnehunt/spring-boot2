@@ -23,6 +23,15 @@ public class ClientApplication implements CommandLineRunner {
 		SpringApplication.run(ClientApplication.class, args);
 	}
 
+	/**
+	 * CommandLine runner interface used to allow injection of
+	 * server.url and rest template bean. These happen after
+	 * the Spring Context is initialised i.e. which is only
+	 * guaranteed to inject the values once the main method runs.
+	 * The run method is then called by Spring allowing the code
+	 * to access both injected dependencies.
+	 * @param args
+	 */
 	public void run(String... args) {
 		System.out.println("serverBaseUrl: " + serverBaseUrl);
 		System.out.println("-----------------");
