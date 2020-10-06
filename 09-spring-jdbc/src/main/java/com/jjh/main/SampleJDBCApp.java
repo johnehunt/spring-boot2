@@ -5,22 +5,16 @@ import java.util.List;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ImportResource;
-import org.springframework.context.annotation.PropertySource;
 
 import com.jjh.dao.EmployeeDAO;
-import com.jjh.dao.EmployeeDAO2;
 import com.jjh.domain.Employee;
-import com.jjh.domain.EmployeeImpl;
 
 @SpringBootApplication
-@PropertySource("classpath:bean.properties")
-@ImportResource("classpath*:bean-context.xml")
-public class App {
+public class SampleJDBCApp {
 	public static void main(String[] args) {
 
 		System.out.println("Main - obtaining Application Context");
-		ApplicationContext context = SpringApplication.run(App.class, args);
+		ApplicationContext context = SpringApplication.run(SampleJDBCApp.class, args);
 		
 		EmployeeDAO dao = context.getBean("employeeDao", EmployeeDAO.class);
 		try {
