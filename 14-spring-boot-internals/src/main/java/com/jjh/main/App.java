@@ -16,7 +16,7 @@ public class App {
 		// Note the change - no SpringApplication.run()
 		SpringApplication app = new SpringApplication(App.class);
 		app.setBanner(new MyBanner());
-		app.setLogStartupInfo(false);
+		app.setLogStartupInfo(false); // Stops default log info
 		app.run(args);
 	}
 
