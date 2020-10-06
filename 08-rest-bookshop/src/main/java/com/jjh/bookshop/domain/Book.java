@@ -6,7 +6,11 @@ public class Book {
 	private String author;
 	private String title;
 	private double price;
-	
+
+	/**
+	 * Default constructor required by conversion libraries
+	 * e.g. JSON-B or JAX-B
+	 */
 	public Book() {}
 	
 	public Book(String isbn, String author, String title, double price) {
@@ -47,7 +51,8 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return String.format("Book [id=%s, author=%s, title=%s, price=%s]", isbn, author, title, price);
+		return String.format("Book [id=%s, author=%s, title=%s, price=%s]",
+				isbn, author, title, price);
 	}
 	
 }
