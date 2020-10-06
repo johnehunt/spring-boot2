@@ -3,6 +3,13 @@ package com.jjh.main2;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+/**
+ * Properties wil be auto-populated form the application.properties
+ * default file - loaded by spring
+ *
+ * Will look for properties myapp.name and myapp.description
+ */
+
 @Component
 @ConfigurationProperties(prefix="myapp")
 public class MyAppProperties {

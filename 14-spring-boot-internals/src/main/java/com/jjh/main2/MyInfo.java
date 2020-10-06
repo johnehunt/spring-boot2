@@ -16,14 +16,18 @@ public class MyInfo {
 	private ApplicationContext applicationContext;
 	
 	@Value("${spring.config.name}")
-	String appName;
+	public String appName;
+	@Value("${spring.application.admin.enabled}")
+	public String adminEnabled;
+	@Value("${spring.main.banner-mode}")
+	public String bannerMode;
 	
 	public String getId() {
 		return this.applicationContext.getId();
 	}
 	
-	public String getConfigLocation() {
-		return this.env.getProperty("spring.config.location");
+	public String getDisplayName() {
+		return applicationContext.getDisplayName();
 	}
 
 }
