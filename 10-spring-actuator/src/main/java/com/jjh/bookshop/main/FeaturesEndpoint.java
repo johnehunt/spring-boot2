@@ -15,6 +15,12 @@ import org.springframework.stereotype.Component;
 public class FeaturesEndpoint {
  
     private Map<String, Feature> features = new ConcurrentHashMap<>();
+
+    public FeaturesEndpoint() {
+        Feature feature = new Feature();
+        feature.setEnabled(true);
+        features.put("feature1", feature);
+    }
  
     @ReadOperation
     public Map<String, Feature> features() {
