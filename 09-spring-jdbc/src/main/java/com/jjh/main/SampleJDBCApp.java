@@ -14,7 +14,8 @@ public class SampleJDBCApp {
 	public static void main(String[] args) {
 
 		System.out.println("Main - obtaining Application Context");
-		ApplicationContext context = SpringApplication.run(SampleJDBCApp.class, args);
+		ApplicationContext context =
+				SpringApplication.run(SampleJDBCApp.class, args);
 		
 		EmployeeDAO dao = context.getBean("employeeDao", EmployeeDAO.class);
 		try {
