@@ -19,13 +19,17 @@ import com.jjh.domain.EmployeeImpl;
 @Component("employeeDao")
 public class EmployeeDAOImpl implements EmployeeDAO {
 
-	@Autowired
 	private JdbcTemplate jdbcTemplate;
+
+	@Autowired
+	public EmployeeDAOImpl(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
 
 	public List<Employee> getEmployees() {
 		List<Employee> employees = new ArrayList<Employee>();
 		String sql = "SELECT * FROM employee";
-		List<Map<String, Object>> list = this.jdbcTemplate.queryForList(sql);
+		List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
 		Iterator<Map<String, Object>> it = list.iterator();
 		while (it.hasNext()) {
 			Map<String, Object> map = it.next();
@@ -39,7 +43,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	public int addEmployee(Employee e) {
 		String sql = "INSERT INTO employee (id, name) values (?,?)";
-		int c = this.jdbcTemplate.update(sql, e.getId(), e.getName());
+		int c = jdbcTemplate.update(sql, e.getId(), e.getName());
 		return c;
 	}
 
@@ -49,21 +53,16 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 	public List<Employee> getAltEmployees() {
 		String sql = "SELECT * FROM employee";
-		
 		RowMapper<Employee> rowMapper = new EmployeeMapper();
-		
-		List<Employee> employees = 
-				   this.jdbcTemplate.query(sql, rowMapper);
-		return employees;
+		return this.jdbcTemplate.query(sql, rowMapper);
 	}
 
 	static class EmployeeMapper implements RowMapper<Employee> {
 
 		public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
-			Employee emp = new EmployeeImpl();
-			emp.setName(rs.getString("name"));
-			emp.setId(rs.getLong("id") + "");
-			return emp;
+			String name = rs.getString("name");
+			String id = rs.getInt("id") + "";
+			return new EmployeeImpl(id, name);
 		}
 
 	}
