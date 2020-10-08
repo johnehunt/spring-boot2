@@ -35,7 +35,9 @@ public class EmployeeController {
 	// http://localhost:8080/employees/add/1/John
 	
 	@RequestMapping("add/{id}/{name}")
-	public String addEmployee(Model model, @PathVariable("id") String id, @PathVariable String name) {
+	public String addEmployee(Model model,
+							  @PathVariable("id") String id,
+							  @PathVariable String name) {
 		System.out.println("addEmployee: " + id + "' " + name);
 		model.addAttribute("message", "addEmployee(" + id + ", " + name + ")");
 		return "employee";
@@ -51,7 +53,9 @@ public class EmployeeController {
 		return "employee";
 	}
 	
-	@RequestMapping(value ="/list", method = RequestMethod.GET, headers="Accept=application/text")
+	@RequestMapping(value ="/list",
+			method = RequestMethod.GET,
+			headers="Accept=application/text")
 	public String employees(Model model) {
 		System.out.println("employees()");
 		model.addAttribute("message", "employees()");
