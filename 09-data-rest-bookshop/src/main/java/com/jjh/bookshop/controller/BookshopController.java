@@ -39,7 +39,7 @@ public class BookshopController {
 	}
 
 	@PostMapping
-	@ResponseStatus(HttpStatus.OK)
+	@ResponseStatus(HttpStatus.CREATED)
 	public void addBook(@RequestBody Book book) {
 		System.out.println("BookshopController.addBook(" + book + ")");
 		this.bookshop.addBook(book);
