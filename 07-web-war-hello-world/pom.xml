@@ -18,7 +18,7 @@
 	<packaging>war</packaging>
 
 	<name>07-web-war-hello-world</name>
-	<description>Example of a SPring Boot project that will be built into a WAR file</description>
+	<description>Example of a Spring Boot project that will be built into a WAR file</description>
 
 	<properties>
 		<java.version>11</java.version>
