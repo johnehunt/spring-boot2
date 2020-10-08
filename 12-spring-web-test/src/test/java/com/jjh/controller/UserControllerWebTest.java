@@ -49,9 +49,9 @@ public class UserControllerWebTest {
         String url = "http://localhost:" + port + "/users";
         User user = new User("4", "Denise", 53);
         HttpEntity<User> request = new HttpEntity<>(user);
-        ResponseEntity<String> response = this.restTemplate
-                .withBasicAuth("admin", "admin123")
-                .postForEntity(url, request, String.class);
+        ResponseEntity<String> response =
+                this.restTemplate
+                        .postForEntity(url, request, String.class);
         assertThat(response.toString()).contains("201");
     }
 
