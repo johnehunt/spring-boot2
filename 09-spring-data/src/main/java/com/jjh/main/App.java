@@ -20,17 +20,17 @@ public class App {
 			System.out.println(s);
 		}
 
-		Student student = new Student(7, "Jill", "Matthews", "Law", "jm@my.com");
-		repo.save(student);
+//		Student student = new Student(8, "Jill", "Matthews", "Law", "jm@my.com", "2");
+//		repo.save(student);
 
-		System.out.println("Check book with Student with id 7 is in database");
-		Optional<Student> optionalStudent = repo.findById(7);
-		System.out.print(optionalStudent);
-		Student s1 = optionalStudent.orElse(null);
-		System.out.println(s1);
-
-		System.out.println("Delete Student just Added");
-		repo.deleteById(7);
+//		System.out.println("Check book with Student with id 7 is in database");
+//		Optional<Student> optionalStudent = repo.findById(7);
+//		System.out.print(optionalStudent);
+//		Student s1 = optionalStudent.orElse(null);
+//		System.out.println(s1);
+//
+//		System.out.println("Delete Student just Added");
+//		repo.deleteById(7);
 
 		System.out.println("Done");
 	}

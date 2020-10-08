@@ -17,16 +17,26 @@ public class Student {
 	private String surname;
 	private String subject;
 	private String email;
+	private String year;
 	
 	public Student() { } // Required by JPA
 	
-	public Student(int id, String name, String surname, String subject, String email) {
+	public Student(int id, String name, String surname, String subject, String email, String year) {
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.subject = subject;
+		this.email = email;
+		this.year = year;
 	}
 
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
 	public String getName() {
 		return name;
 	}
@@ -66,6 +76,7 @@ public class Student {
 				", surname='" + surname + '\'' +
 				", subject='" + subject + '\'' +
 				", email='" + email + '\'' +
+				", year='" + year + '\'' +
 				'}';
 	}
 }
