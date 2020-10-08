@@ -21,13 +21,8 @@ public class ReceiverConfig {
 		DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
 		ActiveMQConnectionFactory cf = new ActiveMQConnectionFactory(brokerUrl);
 		factory.setConnectionFactory(cf);
-		factory.setConcurrency("3-10"); 
+		factory.setConcurrency("3-10"); // Set the concurrent level for receivers
 		return factory;
-	}
-
-	@Bean
-	public Receiver receiver() {
-		return new Receiver();
 	}
 
 }
