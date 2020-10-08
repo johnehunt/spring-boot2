@@ -37,4 +37,12 @@ class UserControllerTest {
         List<User> users = controller.getUsers();
         assertThat(users.size()).isEqualTo(2);
     }
+
+    @Test
+    public void testAddingNewUser() {
+        User user = new User("4", "Denise", 53);
+        controller.addUser(user);
+        List<User> users = controller.getUsers();
+        assertThat(users.size()).isEqualTo(3);
+    }
 }

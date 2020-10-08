@@ -1,17 +1,20 @@
 package com.jjh.domain;
 
 public class User {
+
+	private String id;
 	private String name;
 	private int age;
 	private String title = "Mr";
-	
+
 	public User() {} // Need for JAXB
 
-	public User(String name, int age) {
+	public User(String id, String name, int age) {
+		this.id = id;
 		this.name = name;
 		this.age = age;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -29,5 +32,11 @@ public class User {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 }

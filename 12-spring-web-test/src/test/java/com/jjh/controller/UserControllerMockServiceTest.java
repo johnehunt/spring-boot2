@@ -33,7 +33,7 @@ public class UserControllerMockServiceTest {
     @Test
     public void getUserForJohnViaMVC() throws Exception {
         // Set up mocking behaviour for getUser
-        when(service.getUser(any(String.class))).thenReturn(new User("John", 54) );
+        when(service.getUser(any(String.class))).thenReturn(new User("x", "John", 54) );
         String urlTemplate = "/users/user/John";
         mockMvc.perform(get(urlTemplate))
                 .andExpect(status().isOk())

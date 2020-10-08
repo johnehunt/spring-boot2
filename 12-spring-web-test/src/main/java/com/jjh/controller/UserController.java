@@ -3,10 +3,8 @@ package com.jjh.controller;
 import com.jjh.domain.User;
 import com.jjh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,5 +35,26 @@ public class UserController {
 	public List<User> getUsers() {
 		System.out.println("UserController.getUsers()");
 		return userService.getUsers();
+	}
+
+	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public void addUser(@RequestBody User user) {
+		System.out.println("UserController.addUser(" + user + ")");
+		this.userService.addUser(user);
+	}
+
+	@PutMapping
+	@ResponseStatus(HttpStatus.OK)
+	public void updateUser(@RequestBody User user) {
+		System.out.println("UserController.updateUser(" + user + ")");
+		this.userService.updateUser(user);
+	}
+
+	@DeleteMapping("{id}")
+	@ResponseStatus(HttpStatus.OK)
+	public void deleteUser(@PathVariable String id) {
+		System.out.println("UserController.deleteUser(" + id + ")");
+		userService.deleteUser(id);
 	}
 }

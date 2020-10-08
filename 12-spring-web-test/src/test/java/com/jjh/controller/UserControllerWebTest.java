@@ -1,5 +1,6 @@
 package com.jjh.controller;
 
+import com.jjh.domain.User;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 
 /**
  * Testing a Controller or Rest Controller by starting up
@@ -39,6 +42,17 @@ public class UserControllerWebTest {
         String response = restTemplate.getForObject(url, String.class);
         assertThat(response).contains("Bill");
         assertThat(response).contains("Ben");
+    }
+
+    @Test
+    public void testAddingNewUser() {
+        String url = "http://localhost:" + port + "/users";
+        User user = new User("4", "Denise", 53);
+        HttpEntity<User> request = new HttpEntity<>(user);
+        ResponseEntity<String> response = this.restTemplate
+                .withBasicAuth("admin", "admin123")
+                .postForEntity(url, request, String.class);
+        assertThat(response.toString()).contains("201");
     }
 
 }
