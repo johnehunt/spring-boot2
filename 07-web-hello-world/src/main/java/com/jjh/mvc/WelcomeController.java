@@ -13,7 +13,7 @@ public class WelcomeController {
 	// http://localhost:8080/welcome/hello
 	
 	@RequestMapping("hello")
-	public String sayhello(Model model) throws Exception {
+	public String sayHello(Model model) throws Exception {
 		System.out.println("WelcomeController.hello()");
 		model.addAttribute("message", "John - " + new Date());
 		return "greeting";
@@ -26,4 +26,5 @@ public class WelcomeController {
 		System.out.println("WelcomeController.help()");
 		return "info";
 	}
+
 }
