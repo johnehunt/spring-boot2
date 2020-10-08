@@ -38,6 +38,7 @@ public class BookshopController {
 		return bookshop.getAllBooks();
 	}
 
+	// @PostMapping(consumes = "application/json", produces = "application/json")
 	@PostMapping
 	@ResponseStatus(HttpStatus.OK)
 	public void addBook(@RequestBody Book book) {
