@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
+@EnableWebSecurity
 @ComponentScan(basePackages = {
         "com.jjh.controller",
         "com.jjh.service"
@@ -35,7 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     // Secure the endpoints with HTTP Basic authentication
     protected void configure(HttpSecurity http) throws Exception {
-
         http
                 //HTTP Basic authentication
                 .httpBasic()
