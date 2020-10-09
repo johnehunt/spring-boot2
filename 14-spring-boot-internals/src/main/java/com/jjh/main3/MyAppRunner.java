@@ -11,16 +11,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MyAppRunner implements CommandLineRunner, ApplicationRunner {
 	
-	public static void main(String [] args) throws IOException {
+	public static void main(String [] args) {
+		for (String arg : args) {
+			System.out.println(arg);
+		}
 		SpringApplication.run(MyAppRunner.class, args);
 	}
 
-	public void run(ApplicationArguments args) throws Exception {
+	public void run(ApplicationArguments args) {
 		System.out.println("Application Runner Implementation");
 		args.getNonOptionArgs().forEach(option -> System.out.println(option));
 	}
 
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		System.out.println("CommandLine Runner Implementation");
 		for (String option : args) 
 			System.out.println(option);
