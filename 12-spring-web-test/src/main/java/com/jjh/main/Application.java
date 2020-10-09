@@ -7,7 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = {
         "com.jjh.controller",
-        "com.jjh.service"
+        "com.jjh.service",
+        "com.jjh.dao"
 })
 public class Application {
     public static void main(String[] args) {

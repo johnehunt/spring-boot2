@@ -31,7 +31,9 @@ public class UserControllerWebTest {
     @Test
     public void getUserInJSONFormatForJohn() {
         String url = "http://localhost:" + port + "/users/user/John";
+        System.out.println(url);
         String response = restTemplate.getForObject(url, String.class);
+        System.out.println(response);
         assertThat(response).contains("John");
         assertThat(response).contains("54");
     }
