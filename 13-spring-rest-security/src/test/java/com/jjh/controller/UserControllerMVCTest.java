@@ -2,6 +2,7 @@ package com.jjh.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jjh.domain.User;
+import com.jjh.main.Application;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -22,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Testing a controller or rest controller via
  * the MVC infrastructure
  */
-@SpringBootTest(classes = com.jjh.main.Application.class)
+@SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
 public class UserControllerMVCTest {
 
@@ -73,7 +74,18 @@ public class UserControllerMVCTest {
     }
 
     @Test
-    @WithMockUser(username="admin", roles="ADMIN")
+    public void testUnauthorizedNewUserRequestExtra() throws Exception {
+        String url = "/users/";
+        User user = new User("4", "Denise", 53);
+        mockMvc.perform(post(url)
+                .content(asJsonString(user))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isUnauthorized());
+    }
+
+    @Test
+    @WithMockUser(username="user", roles="User")
     public void testAddingNewUserRequest() throws Exception {
         String url = "/users";
         User user = new User("4", "Denise", 53);
