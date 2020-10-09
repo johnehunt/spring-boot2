@@ -11,8 +11,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @Configuration
 @PropertySource("classpath:jdbc.properties")
 public class DatabaseConfig2 {
-	
-	
+
 	@Value("${jdbc.driverClassName}")
 	private String driverClassname;
 	
