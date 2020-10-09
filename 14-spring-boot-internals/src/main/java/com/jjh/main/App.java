@@ -53,7 +53,9 @@ public class App {
 
 class MyBanner implements Banner {
 
-	public void printBanner(Environment environment, Class<?> sourceClass, PrintStream out) {
+	public void printBanner(Environment environment,
+							Class<?> sourceClass,
+							PrintStream out) {
 		out.println("---------------------");
 		out.println("  My Custom Banner");
 		out.println("---------------------");
