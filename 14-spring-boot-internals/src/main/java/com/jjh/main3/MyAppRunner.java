@@ -21,7 +21,7 @@ public class MyAppRunner implements CommandLineRunner, ApplicationRunner {
 	}
 
 	public void run(String... args) throws Exception {
-		System.out.println("COmmandLine Runner Implementation");
+		System.out.println("CommandLine Runner Implementation");
 		for (String option : args) 
 			System.out.println(option);
 	}
