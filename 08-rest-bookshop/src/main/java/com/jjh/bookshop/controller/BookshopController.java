@@ -40,7 +40,7 @@ public class BookshopController {
 
 	// @PostMapping(consumes = "application/json", produces = "application/json")
 	@PostMapping
-	@ResponseStatus(HttpStatus.OK)
+	@ResponseStatus(HttpStatus.CREATED)
 	public void addBook(@RequestBody Book book) {
 		System.out.println("BookshopController.addBook(" + book + ")");
 		this.bookshop.addBook(book);
