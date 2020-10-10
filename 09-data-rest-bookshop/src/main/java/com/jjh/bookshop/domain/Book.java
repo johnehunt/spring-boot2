@@ -3,6 +3,8 @@ package com.jjh.bookshop.domain;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "books")
@@ -11,8 +13,12 @@ public class Book {
 	@Id
 	// @GeneratedValue
 	private String isbn;
+	@NotBlank(message = "Author is mandatory")
 	private String author;
+	@NotBlank(message = "Title is mandatory")
 	private String title;
+
+	@Min(0)
 	private double price;
 	
 	public Book() {}
