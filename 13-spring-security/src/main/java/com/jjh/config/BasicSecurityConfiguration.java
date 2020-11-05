@@ -1,4 +1,4 @@
-package com.jjh.main;
+package com.jjh.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -43,8 +43,8 @@ public class BasicSecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/welcome/help").access("hasRole('USER')")
-                .antMatchers("/welcome/hello").access("hasRole('ADMIN')");
+                .antMatchers("/welcome/help").hasRole("USER")
+                .antMatchers("/welcome/hello").hasRole("ADMIN");
     }
 }
 
