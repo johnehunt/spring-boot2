@@ -13,7 +13,7 @@ import com.jjh.beans.PrintService;
 import com.jjh.logging.LoggingService;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.jjh.message,com.jjh.beans")
+@ComponentScan(basePackages = {"com.jjh.message","com.jjh.beans"})
 public class Application {
     public static void main(String[] args) {
         System.out.println("Main - Obtaining Application Context");
