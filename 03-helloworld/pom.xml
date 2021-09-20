@@ -18,8 +18,6 @@
 
 	<properties>
 		<java.version>16</java.version>
-		<maven.compiler.source>16</maven.compiler.source>
-		<maven.compiler.target>16</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -40,6 +38,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${parent.version}</version>
 			</plugin>
 		</plugins>
 	</build>
