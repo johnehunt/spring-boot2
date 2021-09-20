@@ -5,7 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.jjh.bookshop.controller,com.jjh.bookshop.service")
+@ComponentScan(basePackages = {
+		"com.jjh.bookshop.controller",
+		"com.jjh.bookshop.service"})
 public class BookshopApplication {
 
 	public static void main(String[] args) {
