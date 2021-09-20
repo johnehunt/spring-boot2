@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@ComponentScan(basePackages = "com.jjh.bookshop.controller,com.jjh.bookshop.service")
+@ComponentScan(basePackages = {"com.jjh.bookshop.controller","com.jjh.bookshop.service"})
 @EntityScan("com.jjh.bookshop.domain")
 @EnableJpaRepositories("com.jjh.bookshop.repository")
 public class AppConfig {}
