@@ -7,17 +7,20 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.0</version>
+        <version>2.5.4</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.example</groupId>
     <artifactId>13-spring-rest-security</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>13-spring-rest-security</name>
     <description>Demo Rest project for Spring Boot Security with a REST service</description>
+
     <properties>
-        <java.version>11</java.version>
+        <java.version>16</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
