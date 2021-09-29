@@ -1,12 +1,13 @@
 package com.jjh.main;
 
-import com.jjh.domain.Coffee;
+import com.jjh.domain.Trade;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.core.step.tasklet.TaskletStep;
 import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider;
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilder;
@@ -35,27 +36,28 @@ public class BatchConfiguration {
     private String fileInput;
 
     @Bean
-    public FlatFileItemReader reader() {
-        return new FlatFileItemReaderBuilder().name("coffeeItemReader")
+    public FlatFileItemReader<Trade> reader() {
+        final FlatFileItemReader coffeeItemReader = new FlatFileItemReaderBuilder().name("tradeItemReader")
                 .resource(new ClassPathResource(fileInput))
                 .delimited()
-                .names(new String[] { "brand", "origin", "characteristics" })
+                .names(new String[]{"symbol", "amount", "price"})
                 .fieldSetMapper(new BeanWrapperFieldSetMapper() {{
-                    setTargetType(Coffee.class);
+                    setTargetType(Trade.class);
                 }})
                 .build();
+        return coffeeItemReader;
     }
 
     @Bean
-    public CoffeeItemProcessor processor() {
-        return new CoffeeItemProcessor();
+    public TradeItemProcessor processor() {
+        return new TradeItemProcessor();
     }
 
     @Bean
     public JdbcBatchItemWriter writer(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO coffee (brand, origin, characteristics) VALUES (:brand, :origin, :characteristics)")
+                .sql("INSERT INTO trades (symbol, amount, price, value) VALUES (:symbol, :amount, :price, :value)")
                 .dataSource(dataSource)
                 .build();
     }
@@ -71,13 +73,14 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public Step step1(JdbcBatchItemWriter writer) {
-        return stepBuilderFactory.get("step1")
-                .<Coffee, Coffee> chunk(10)
+    public Step step1(JdbcBatchItemWriter<Trade> writer) {
+        final TaskletStep step1 = stepBuilderFactory.get("step1")
+                .<Trade, Trade>chunk(10)
                 .reader(reader())
                 .processor(processor())
                 .writer(writer)
                 .build();
+        return step1;
     }
 
 
