@@ -37,15 +37,17 @@ public class BatchConfiguration {
 
     @Bean
     public FlatFileItemReader<Trade> reader() {
-        final FlatFileItemReader coffeeItemReader = new FlatFileItemReaderBuilder().name("tradeItemReader")
+        FlatFileItemReaderBuilder<Trade> builder = new FlatFileItemReaderBuilder<Trade>();
+        builder.name("tradeItemReader")
                 .resource(new ClassPathResource(fileInput))
                 .delimited()
-                .names(new String[]{"symbol", "amount", "price"})
-                .fieldSetMapper(new BeanWrapperFieldSetMapper() {{
+                .names("symbol", "amount", "price")
+                .fieldSetMapper(new BeanWrapperFieldSetMapper<Trade>() {{
                     setTargetType(Trade.class);
-                }})
-                .build();
-        return coffeeItemReader;
+                }});
+
+        FlatFileItemReader<Trade> itemReader = builder.build();
+        return itemReader;
     }
 
     @Bean
@@ -54,12 +56,15 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public JdbcBatchItemWriter writer(DataSource dataSource) {
-        return new JdbcBatchItemWriterBuilder()
-                .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
+    public JdbcBatchItemWriter<Trade> writer(DataSource dataSource) {
+        JdbcBatchItemWriterBuilder<Trade> builder = new JdbcBatchItemWriterBuilder<Trade>();
+        builder.itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
                 .sql("INSERT INTO trades (symbol, amount, price, value) VALUES (:symbol, :amount, :price, :value)")
-                .dataSource(dataSource)
-                .build();
+                .dataSource(dataSource);
+
+        JdbcBatchItemWriter<Trade> itemWriter = builder.build();
+
+        return itemWriter;
     }
 
     @Bean
@@ -82,7 +87,5 @@ public class BatchConfiguration {
                 .build();
         return step1;
     }
-
-
 
 }
