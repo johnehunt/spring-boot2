@@ -26,6 +26,5 @@ public class App {
 
 		System.out.println("Press Enter to Terminate");
 		System.in.read();
-
 	}
 }
