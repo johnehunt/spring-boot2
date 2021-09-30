@@ -58,18 +58,16 @@ public class BatchConfiguration {
     @Bean
     public JdbcBatchItemWriter<Trade> writer(DataSource dataSource) {
         JdbcBatchItemWriterBuilder<Trade> builder = new JdbcBatchItemWriterBuilder<Trade>();
-        builder.itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO trades (symbol, amount, price, value) VALUES (:symbol, :amount, :price, :value)")
-                .dataSource(dataSource);
-
+        builder.itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>());
+        builder.sql("INSERT INTO trades (symbol, amount, price, value) VALUES (:symbol, :amount, :price, :value)");
+        builder.dataSource(dataSource);
         JdbcBatchItemWriter<Trade> itemWriter = builder.build();
-
         return itemWriter;
     }
 
     @Bean
-    public Job importUserJob(JobCompletionNotificationListener listener, Step step1) {
-        return jobBuilderFactory.get("importUserJob")
+    public Job importTradeJob(JobExecutionHandler listener, Step step1) {
+        return jobBuilderFactory.get("ImportTradeJob")
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)
                 .flow(step1)

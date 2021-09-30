@@ -11,28 +11,26 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class JobCompletionNotificationListener extends JobExecutionListenerSupport {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(JobCompletionNotificationListener.class);
-
-    private final JdbcTemplate jdbcTemplate;
-
+public class JobExecutionHandler extends JobExecutionListenerSupport {
+    private static final Logger LOG = LoggerFactory.getLogger(JobExecutionHandler.class);
     @Autowired
-    public JobCompletionNotificationListener(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
+
+    @Override
+    public void beforeJob(JobExecution jobExecution) {
+        LOG.info("!!! Starting Job{}", jobExecution.getJobId());
     }
 
     @Override
     public void afterJob(JobExecution jobExecution) {
         if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
-            LOGGER.info("!!! JOB FINISHED! Time to verify the results");
-
+            LOG.info("!!! Finished Job{} - Verifying results", jobExecution.getJobId());
             String query = "SELECT symbol, amount, price, value FROM trades";
             jdbcTemplate.query(query, (rs, row) -> new Trade(rs.getString(1),
                             rs.getInt(2),
                             rs.getDouble(3),
                             rs.getDouble(4)))
-                    .forEach(coffee -> LOGGER.info("Found < {} > in the database.", coffee));
+                    .forEach(t -> LOG.info("Found {} in the database.", t));
         }
     }
 }
