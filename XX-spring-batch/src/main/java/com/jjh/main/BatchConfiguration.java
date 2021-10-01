@@ -33,13 +33,13 @@ public class BatchConfiguration {
     public StepBuilderFactory stepBuilderFactory;
 
     @Value("${file.input}")
-    private String fileInput;
+    private String inputfile;
 
     @Bean
     public FlatFileItemReader<Trade> reader() {
         FlatFileItemReaderBuilder<Trade> builder = new FlatFileItemReaderBuilder<Trade>();
         builder.name("tradeItemReader")
-                .resource(new ClassPathResource(fileInput))
+                .resource(new ClassPathResource(inputfile))
                 .delimited()
                 .names("symbol", "amount", "price")
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<Trade>() {{
@@ -76,14 +76,15 @@ public class BatchConfiguration {
     }
 
     @Bean
-    public Step step1(JdbcBatchItemWriter<Trade> writer) {
-        final TaskletStep step1 = stepBuilderFactory.get("step1")
+    public Step step1(FlatFileItemReader<Trade> reader,
+                      TradeItemProcessor processor,
+                      JdbcBatchItemWriter<Trade> writer) {
+        return stepBuilderFactory.get("step1")
                 .<Trade, Trade>chunk(10)
-                .reader(reader())
-                .processor(processor())
+                .reader(reader)
+                .processor(processor)
                 .writer(writer)
                 .build();
-        return step1;
     }
 
 }
